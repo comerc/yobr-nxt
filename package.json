@@ -1,0 +1,33 @@
+{
+  "name": "YOBR",
+  "version": "0.3.0",
+  "moduleRoots": [
+    ""
+  ],
+  "devDependencies": {
+    "babel-plugin-module-resolver": "^2.5.0",
+    "redux-devtools-extension": "^2.13.0",
+    "redux-logger": "^3.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "draft-js": "^0.10.0",
+    "isomorphic-fetch": "^2.2.1",
+    "material-ui": "^0.17.1",
+    "next": "^2.0.0-beta",
+    "normalizr": "^3.2.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.6.0",
+    "redux-actions": "^2.0.1",
+    "redux-thunk": "^2.2.0",
+    "reselect": "^3.0.0"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  }
+}
