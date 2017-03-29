@@ -4,7 +4,7 @@ import { Provider, connect } from 'react-redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 import { createLogger } from 'redux-logger'
-import { reducer } from './reducer'
+import reducer from 'ducks'
 
 let store = null
 
