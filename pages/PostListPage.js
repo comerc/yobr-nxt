@@ -9,7 +9,7 @@ import { actions } from 'ducks/posts'
 // import { initStore } from 'app/store'
 // import { connect } from 'react-redux'
 
-const PostList = ({ posts }) => (
+const PostListPage = ({ posts }) => (
   <Page>
     <Header>Header</Header>
     {/* <PostAdd/> */}
@@ -32,7 +32,7 @@ const PostList = ({ posts }) => (
   </Page>
 )
 
-PostList.getInitialProps = async ({ store, req }) => {
+PostListPage.getInitialProps = async ({ store, req }) => {
   if (req) {
     const { filterType, filterId } = req.params
     await store.dispatch(actions.fetch())
@@ -41,7 +41,7 @@ PostList.getInitialProps = async ({ store, req }) => {
   return {}
 }
 
-PostList.propTypes = {
+PostListPage.propTypes = {
   filterType: PropTypes.string,
   filterId: PropTypes.string,
   posts: PropTypes.arrayOf(PropTypes.shape(Post.propTypes)),
@@ -89,4 +89,4 @@ const mapStateToProps = (state, ownProps) => ({
 // export default connectPage(mapStateToProps)(PostList)
 // PostList = connect(mapStateToProps)(PostList)
 // export default withRedux(initStore, mapStateToProps)(PostList)
-export default connectPage(mapStateToProps)(PostList)
+export default connectPage(mapStateToProps)(PostListPage)

@@ -16,7 +16,7 @@ app.prepare()
   // })
 
   server.get('/:filterType(all|flow|hub)/:filterId?', (req, res) => {
-    return app.render(req, res, '/PostList', req.query)
+    return app.render(req, res, '/PostListPage', req.query)
   })
 
   server.get('/b', (req, res) => {
