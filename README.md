@@ -1,6 +1,6 @@
-# yobrNXT
+# yobr
 
-[DEMO](https://yobr-lcdyabevgl.now.sh/)
+[DEMO](https://yobr.now.sh/)
 
 ```bash
 $ yarn install
