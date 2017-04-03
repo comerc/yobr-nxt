@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react'
 import cx from 'classnames'
 
 const PostBody = ({ isTeaser, content, children }) => (
-  <div className={isTeaser ? s.crop : null}>
+  <div className={cx({ 'crop': isTeaser })}>
     <div
-      className={cx(s.content, s.htmlFormat)}
+      className={cx("content", "htmlFormat")}
       // TODO dangerouslySetInnerHTML={{ __html: content }}
     >{content}</div>
     {children}

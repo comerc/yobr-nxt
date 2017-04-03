@@ -1,12 +1,9 @@
 import React, { PropTypes } from 'react'
-import { urlencode } from 'src/core/utils'
+import { urlencode } from 'app/utils'
 import Link from 'next/link'
 
-const PostTags = ({ tags }) => {
-  if (!tags || tags.length === 0) {
-    return null
-  }
-  return (
+const PostTags = ({ tags }) =>
+  tags && tags.length > 0 && (
     <ul>
       {tags.map(tag =>
         <li key={tag}>
@@ -18,7 +15,6 @@ const PostTags = ({ tags }) => {
       )}
     </ul>
   )
-}
 
 PostTags.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.string),

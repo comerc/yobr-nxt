@@ -1,5 +1,5 @@
 import React from 'react'
-import { connectPage } from 'store'
+import { connectPage } from 'app/store'
 import Link from 'next/link'
 
 class Page extends React.Component {
@@ -10,4 +10,10 @@ class Page extends React.Component {
   }
 }
 
-export default connectPage((state) => state)(Page)
+Page.getInitialProps = async (ctx) => {
+  // console.log('ctx', ctx)
+  return {}
+}
+
+export default connectPage()(Page)
+// export default Page

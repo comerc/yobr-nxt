@@ -19,7 +19,7 @@ const Post = ({ id, published, flow, hubs, title, isDraft,
         <PostTags {...{ tags }} />
       }
     </PostBody>
-    <div className={s.footer}>
+    <div className="footer">
       <PostInfoPanel isTeaser {...{ id, author, viewsCount, favoritesCount }} />
     </div>
     <br/>

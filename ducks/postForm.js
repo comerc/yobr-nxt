@@ -1,7 +1,7 @@
 import { createAction, createReducer } from 'redux-act'
-import history from 'src/core/history'
-import { POST_FORM_TITLE_MAX, POST_FORM_HUBS_MAX } from 'src/core/consts'
-import { sleep } from 'src/core/utils'
+import Router from 'next/router'
+import { POST_FORM_TITLE_MAX, POST_FORM_HUBS_MAX } from 'app/consts'
+import { sleep } from 'app/utils'
 import isEmpty from 'lodash/isEmpty'
 import { actions as appActions } from './app'
 import { actions as postsActions } from './posts'
@@ -39,9 +39,11 @@ const validators = {
 }
 
 export const actions = {
-  reset,
   read: id => (dispatch, getState) => {
     dispatch(reset())
+    if (id === void 0) {
+      return Promise.resolve()
+    }
     // dispatch(appActions.setLoading(true))
     return sleep(100) // simulate server latency
       .then(
@@ -99,7 +101,7 @@ export const actions = {
           dispatch(postsActions.set(posts))
           dispatch(appActions.setLoading(false))
           if (process.browser) {
-            history.push(`/post/${post.id}`)
+            Router.push(`/post/${post.id}`)
           }
         }
       )

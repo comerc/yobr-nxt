@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import cx from 'classnames'
 import { ga } from 'app/utils'
 import Link from 'next/link'
 
@@ -18,9 +19,9 @@ const PostHubs = ({ hubs }) => (
           to={`/post/hub/${hub.id}/`}
           title={hub.isSubscribed ? 'Вы подписаны на этот хаб' : 'Вы не подписаны на этот хаб'}
           onClick={onClick(hub)}
-          className={hub.isSubscribed ? s.subscribed : null}
+          className={cx({ 'subscribed': hub.isSubscribed })}
         >{hub.name}</Link>
-        {hub.isProfiled && <span className={s.profiled} title="Профильный хаб">*</span>}
+        {hub.isProfiled && <span className="profiled" title="Профильный хаб">*</span>}
       </li>
     )}
   </ul>

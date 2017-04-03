@@ -7,7 +7,7 @@ import PostHubs from './PostHubs'
 
 const PostHeader = ({ isTeaser, published, flow, id, title, hubs, isDraft }) => (
   <div>
-    <span className={s.published}>{formatDateTime(published)}</span>
+    <span className="published">{formatDateTime(published)}</span>
     <PostTitle {...{ isTeaser, flow, id, title, isDraft }} />
     <PostHubs {...{ hubs }} />
   </div>

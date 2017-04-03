@@ -5,14 +5,9 @@ import Link from 'next/link'
 class Page extends React.Component {
   render () {
     return (
-      <h1><Link href="/"><a>Home</a></Link></h1>
+      <h1>a</h1>
     )
   }
-}
-
-Page.getInitialProps = (ctx) => {
-  // console.log('ctx', ctx)
-  return {}
 }
 
 // export default connectPage()(Page)

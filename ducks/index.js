@@ -4,7 +4,6 @@ import flows from './flows'
 import hubs from './hubs'
 import postForm from './postForm'
 import posts from './posts'
-import runtime from './runtime'
 import currentUser from './currentUser'
 
 export default combineReducers({
@@ -13,6 +12,5 @@ export default combineReducers({
   hubs,
   postForm,
   posts,
-  runtime,
   currentUser,
 })
