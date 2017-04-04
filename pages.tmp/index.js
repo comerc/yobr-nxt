@@ -11,11 +11,9 @@ const Page = ({ update }) => {
   }
   return (
     <div>
-      {/* <Link href="/">Home</Link> */}
-      &nbsp;|&nbsp;
-      <Link href="/all"><a>All</a></Link>
-      &nbsp;|&nbsp;
+      <Link href="/"><a>Home</a></Link>
       <button onClick={handleClick}>Send</button>
+      {/* <Link href="/all"><a>All</a></Link> */}
     </div>
   )
 }

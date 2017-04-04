@@ -82,35 +82,35 @@ export const actions = {
       return
     }
     dispatch(appActions.setMainError())
-    dispatch(appActions.setLoading(true))
-    sleep(1000) // simulate server latency
-      .then(
-        (id) => {
-          const state = getState()
-          const posts = state.posts
-          const { searchHub, errors, ...post } = state.postForm
-          if (post.id) {
-            const index = posts.findIndex(element => element.id === post.id)
-            posts[index] = post
-          } else {
-            post.id = +Math.random().toString().slice(2)
-            post.published = (new Date()).toLocaleString()
-            post.author = state.currentUser
-            posts.push(post)
-          }
-          dispatch(postsActions.set(posts))
-          dispatch(appActions.setLoading(false))
-          if (process.browser) {
-            Router.push(`/post/${post.id}`)
-          }
-        }
-      )
-      .catch(
-        (error) => {
-          dispatch(appActions.setLoading(false))
-          dispatch(appActions.setMainError(error.toString()))
-        }
-      )
+    // dispatch(appActions.setLoading(true))
+    // sleep(1000) // simulate server latency
+    //   .then(
+    //     (id) => {
+    //       const state = getState()
+    //       const posts = state.posts
+    //       const { searchHub, errors, ...post } = state.postForm
+    //       if (post.id) {
+    //         const index = posts.findIndex(element => element.id === post.id)
+    //         posts[index] = post
+    //       } else {
+    //         post.id = +Math.random().toString().slice(2)
+    //         post.published = (new Date()).toLocaleString()
+    //         post.author = state.currentUser
+    //         posts.push(post)
+    //       }
+    //       dispatch(postsActions.set(posts))
+    //       dispatch(appActions.setLoading(false))
+    //       if (process.browser) {
+    //         Router.push(`/post/${post.id}`)
+    //       }
+    //     }
+    //   )
+    //   .catch(
+    //     (error) => {
+    //       dispatch(appActions.setLoading(false))
+    //       dispatch(appActions.setMainError(error.toString()))
+    //     }
+    //   )
   },
   input: ({ key, value, isValidate = false }) => (dispatch, getState) => {
     if (isValidate) {

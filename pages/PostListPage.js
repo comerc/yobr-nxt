@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 // import PostAdd from 'components/PostAdd'
 import Page, { Header, Footer } from 'components/Page'
+import Link from 'components/Link'
 import Post from 'components/Post'
 import { createSelector } from 'reselect'
 import { connectPage } from 'app/store'
@@ -11,7 +12,11 @@ import { actions } from 'ducks/posts'
 
 const PostListPage = ({ posts }) => (
   <Page>
-    <Header>Header</Header>
+    <Header>
+      <Link href="/">Home</Link>
+      |
+      <Link href="/all">All</Link>
+    </Header>
     {/* <PostAdd/> */}
     {/* <div className={s.flows}>
       <ul>
@@ -38,6 +43,7 @@ PostListPage.getInitialProps = async ({ store, req }) => {
     await store.dispatch(actions.fetch())
     return { filterType, filterId }
   }
+  console.log('PostListPage.getInitialProps')
   return {}
 }
 
@@ -83,8 +89,9 @@ PostListPage.propTypes = {
 
 const mapStateToProps = (state, ownProps) => ({
   // posts: filteredPosts(state, ownProps)
-  posts: console.log('state.posts', state.posts) || state.posts
+  posts: state.posts
 })
+
 
 // export default connectPage(mapStateToProps)(PostList)
 // PostList = connect(mapStateToProps)(PostList)
