@@ -1,7 +1,5 @@
 # yobr
 
-[DEMO](https://yobr.now.sh/)
-
 ```bash
 $ yarn install
 ```
